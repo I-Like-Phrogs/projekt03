@@ -1,0 +1,23 @@
+{
+  "name": "nodejsstuff",
+  "version": "1.0.0",
+  "description": "projekt02",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I-Like-Phrogs/first-server.git"
+  },
+  "author": "Paul Brandenburg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/I-Like-Phrogs/first-server/issues"
+  },
+  "homepage": "https://github.com/I-Like-Phrogs/first-server#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
