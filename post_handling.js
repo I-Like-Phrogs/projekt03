@@ -16,8 +16,5 @@ const posts = [
   }
 ];
 
-export function addPost(title, author, text) {
-  posts.push({ title, author, text });
-}
 
 export { posts };
