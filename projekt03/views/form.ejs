@@ -1,0 +1,21 @@
+<%- include("head.partial.ejs") %>
+    <main>
+        <a href="javascript:history.back()">powrót</a>
+        <h1><%= title %></h1>
+        <form action="/create/new" method="POST">
+            <div class="input-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="input-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div class="input-group">
+                <label for="text">Text:</label>
+                <textarea id="text" name="text" rows="8" required></textarea>
+            </div>
+            <button type="submit">Create Post</button>
+        </form>
+    </main>
+<%- include("foot.partial.ejs") %>
