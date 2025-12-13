@@ -1,12 +1,34 @@
 <%- include("head.partial.ejs") %>
     <main>
-    <a href="javascript:history.back()">powrót</a>
+    <a href="/">powrót</a>
       <h1>Posty użytkowników</h1>
-      <% posts.forEach(function(post){ %>
-        <div class="post">
-            <div class="post-header"><h2><%= post.title %></h2><b><%= post.author %></b></div>
-            <p><%= post.text %></p>
-        </div>
-    <% }) %>
+      <p class="new_post_link">Stwórz własny <a href="/create">post</a></p>
+      <div class="posts-container">
+        <% posts.forEach(function(post){ %>
+          <div class="post">
+              <div class="post-header">
+                <h2><%= post.title %></h2>
+                <b><%= post.author %></b>
+              </div>
+              <p><%= post.text %></p>
+              <div class="post-actions">
+                <a href="/edit/<%= post.id %>" class="post-btn edit-btn">Edytuj</a>
+                <a href="/delete/<%= post.id %>" class="post-btn delete-btn">Usuń</a>
+              </div>
+          </div>
+        <% }) %>
+      </div>
+      
+      <div class="pagination-controls">
+        <% if (currentPage > 1) { %>
+          <a href="/forum?page=<%= parseInt(currentPage) - 1 %>" class="pagination-btn">← Poprzednia strona</a>
+        <% } %>
+        
+        <span class="page-counter">Strona <%= currentPage %></span>
+        
+        <% if (hasNextPage) { %>
+          <a href="/forum?page=<%= parseInt(currentPage) + 1 %>" class="pagination-btn">Następna strona →</a>
+        <% } %>
+      </div>
     </main>
 <%- include("foot.partial.ejs") %>
