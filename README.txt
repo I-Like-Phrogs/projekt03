@@ -3,6 +3,9 @@ W folderze public znajduje się podstawowa strona główna html, ikona aplikacji
 Folder views zawiera dynamiczne widoki ejs stosowane przez plik index.js do wyświetlania treści, w tym formularze do tworzenia nowych, edycji i usuwania wpisów. 
 plik .gitignore służy w projekcie do blokowania niepotrzebnego dodawania folderu node_modules na repozytorium.
 
+Aplikacja używa dość prostego i podstawowego systemu do edycji i usuwania postów. Zamiast kont użytkowników z hasłami i przywilejami, przy tworzeniu posta, użytkownik nadaje
+mu hasło edycji, które później jest wymagane przy próbie edycji lub usunięcia. przy utworzeniu posta przez funkcję deweloperską, lub gdy nie jest podane hasło defaultem jest "edit".
+
 w kodzie index.js są dwie zmienne dla testowania przez dewelopera. var nuke=true usunie wszystkie posty i var populate=true stworzy 25 nowych losowych postów przy uruchomieniu aplikacji.
 Od tych amiennych zależą funkcje w devactions.js wykonujące tą funkcjonalność.
 UWAGA! - ustawić na true, uruchomić aplikację i od razu zmienić na false. Bez ustawienia na false funkcja będzie wykonywana za każdym uruchomieniem aplikacji.
