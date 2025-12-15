@@ -1,0 +1,25 @@
+<%- include("head.partial.ejs") %>
+    <main>
+        <a href="/forum">powrót</a>
+        <h1><%= title %></h1>
+        <form action="/create/new" method="POST">
+            <div class="input-group">
+                <label for="title">Tytuł:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="input-group">
+                <label for="author">Autor:</label>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div class="input-group">
+                <label for="text">Tekst:</label>
+                <textarea id="text" name="text" rows="8" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="edit_key">Hasło edycji (do edycji/usunięcia posta) (defaultowo "edit"):</label>
+                <input type="password" id="edit_key" name="edit_key" required>
+            </div>
+            <button type="submit">Stwórz Post</button>
+        </form>
+    </main>
+<%- include("foot.partial.ejs") %>

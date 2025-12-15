@@ -1,0 +1,24 @@
+<%- include("head.partial.ejs") %>
+    <main>
+        <a href="/forum">powrót</a>
+        <h1><%= title %></h1>
+        <div class="delete-warning">
+            <p><strong>Jesteś pewien?</strong> Ta akcja jest nieodwracalna!</p>
+            <div class="post">
+                <div class="post-header">
+                    <h2><%= post.title %></h2>
+                    <b><%= post.author %></b>
+                </div>
+                <p><%= post.text %></p>
+            </div>
+        </div>
+        
+        <form action="/delete/<%= post.id %>" method="POST">
+            <div class="input-group">
+                <label for="edit_key">Hasło edycji (aby potwierdzić usunięcie) (defaultowo "edit"):</label>
+                <input type="password" id="edit_key" name="edit_key" required>
+            </div>
+            <button type="submit" class="danger-btn">Usuń post</button>
+        </form>
+    </main>
+<%- include("foot.partial.ejs") %>

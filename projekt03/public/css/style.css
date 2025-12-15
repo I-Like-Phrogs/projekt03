@@ -1,0 +1,176 @@
+html {
+    background-color: rgb(221, 158, 115);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    width: 70rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 6%;
+    box-shadow: 1px 1px 35px rgb(255, 255, 255);
+}
+
+.posts-container {
+    flex: 1;
+    overflow-y: auto;
+}
+.new_post_link {
+    padding: 5px;
+    border: 1px solid rgb(173, 95, 43);
+    font-size: 18px;
+    border-radius: 2px;
+    background-color: rgb(245, 245, 245);
+    font-weight: bold;
+}
+.post-header {
+    border-radius: 5px;
+    background-color: rgb(173, 95, 43);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+.post {
+    border-radius: 5px;
+    background-color: rgb(248, 246, 244);
+    color: black;
+    padding: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(173, 95, 43);
+}
+.input-group {
+    border-radius: 5px;
+    background-color: rgb(248, 246, 244);
+    color: black;
+    padding: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(173, 95, 43);
+}
+.input-group label {
+    border-radius: 5px;
+    background-color: rgb(173, 95, 43);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+button { 
+    background-color: rgb(173, 95, 43);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: rgb(173, 114, 76);
+    transition: 0.3s;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgb(173, 95, 43);
+}
+
+.pagination-btn {
+    background-color: rgb(173, 95, 43);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.pagination-btn:hover {
+    background-color: rgb(173, 114, 76);
+    transition: 0.3s;
+}
+
+.page-counter {
+    font-weight: bold;
+    color: rgb(173, 95, 43);
+    font-size: 1.1rem;
+}
+.post-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(173, 95, 43);
+}
+
+.post-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    display: inline-block;
+}
+
+.edit-btn {
+    background-color: rgb(70, 130, 180);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: rgb(100, 160, 210);
+}
+
+.delete-btn {
+    background-color: rgb(220, 20, 60);
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: rgb(240, 50, 90);
+}
+
+.danger-btn {
+    background-color: rgb(220, 20, 60);
+    color: white;
+}
+
+.danger-btn:hover {
+    background-color: rgb(240, 50, 90);
+}
+
+.delete-warning {
+    background-color: rgb(255, 240, 245);
+    border: 2px solid rgb(220, 20, 60);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.delete-warning p {
+    color: rgb(220, 20, 60);
+    margin: 0 0 1rem 0;
+}
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid rgb(173, 95, 43);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
