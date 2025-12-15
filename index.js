@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 
 // dev-tool: Ustawić na true aby dodać przykładowe posty do bazy danych przy uruchomieniu aplikacji
 var populate = false;
-populateSamplePosts(populate, 50);
+populateSamplePosts(populate);
 
 // dev-tool: Ustawić na true aby usunąć WSZYSTKIE istniejące rekordy z tabeli posts przy uruchomieniu aplikacji
 var nuke = false;
