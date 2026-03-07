@@ -10,19 +10,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded());
 app.use(morgan("dev"));
 
-<<<<<<< HEAD
-// DEV: Ustawić na true aby dodać przykładowe posty do bazy danych przy uruchomieniu aplikacji
-var populate = false;
-populateSamplePosts(populate, 50);
-
-// DEV: Ustawić na true aby usunąć WSZYSTKIE istniejące rekordy z tabeli posts przy uruchomieniu aplikacji
-=======
 // dev-tool: Ustawić na true aby dodać przykładowe posty do bazy danych przy uruchomieniu aplikacji
 var populate = false;
 populateSamplePosts(populate);
 
 // dev-tool: Ustawić na true aby usunąć WSZYSTKIE istniejące rekordy z tabeli posts przy uruchomieniu aplikacji
->>>>>>> 98cf34580c5df13173a80b381ae820f6957480f5
 var nuke = false;
 nukeTableRecords(nuke);
 
