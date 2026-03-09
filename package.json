@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.2.1",
+    "Express": "^3.0.1",
     "morgan": "^1.10.1"
   }
 }
