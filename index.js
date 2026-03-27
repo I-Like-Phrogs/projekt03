@@ -94,7 +94,17 @@ app.post("/delete/:id", (req, res) => {
   }
 });
 
+app.get("/login", (req, res) => {
+  res.render("base_login", {
+    title: "Zaloguj się"
+  });
+});
 
+app.get("/register", (req, res) => {
+  res.render("base_register", {
+    title: "Zarejestruj się"
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
