@@ -29,14 +29,15 @@ main {
 }
 
 a {
-    color: #0088cc;
+    color: #004927;
     text-decoration: none;
+    text-decoration: underline;
     transition: 0.2s;
 }
 
 a:hover {
-    color: #00aa44;
-    text-decoration: underline;
+    color: #346e19;
+    font-weight: bold;
 }
 
 h1, h2 {
@@ -352,7 +353,7 @@ textarea {
 }
 
 .auth-btn:hover {
-    background: linear-gradient(135deg, #00aa44 0%, #008800 100%);
+    background: linear-gradient(135deg, rgba(14, 230, 7, 0.178) 0%, rgba(7, 159, 230, 0.178) 100%);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 170, 68, 0.3);
 }
