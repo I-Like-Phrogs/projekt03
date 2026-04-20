@@ -36,7 +36,7 @@ cleanupExpiredSessions();
   var populate = false;
   await populateSamplePosts(populate);
 
-  var nuke = false;
+  var nuke = true;
   nukeTableRecords(nuke);
 })();
 
@@ -185,18 +185,25 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/create_acc", async (req, res) => {
-  const { login, haslo } = req.body;
-  const result = await registerUser(login, haslo);
-  
+  const { login, haslo, hasloP } = req.body;
+  if(haslo == hasloP){
+  const result = await registerUser(login, haslo, hasloP);
   if (result.success) {
-    res.render("base_login", {
-      title: "Zaloguj się",
-      message: "Account created successfully! Now log in."
-    });
-  } else {
+      res.render("base_login", {
+        title: "Zaloguj się",
+        message: "Account created successfully! Now log in."
+      });
+    } else {
+      res.render("base_register", {
+        title: "Zarejestruj się",
+        error: result.message
+      });
+    }
+  }
+  else {
     res.render("base_register", {
-      title: "Zarejestruj się",
-      error: result.message
+        title: "Zarejestruj się",
+        error: "wpisz to samo hasło 2 razy"
     });
   }
 });
