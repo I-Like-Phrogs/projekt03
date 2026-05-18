@@ -29,19 +29,27 @@ main {
 }
 
 a {
-    color: #004927;
     text-decoration: none;
     text-decoration: underline;
+    font-weight: bold;
     transition: 0.2s;
+    border-radius: 10px;
+    box-shadow: #175725 0px 1px 2px;
+    padding: 10px;
+    margin: 5px;
+    background: linear-gradient(45deg, #8ccae9 0%, #94f7bb 100%);
+    color: rgb(32, 90, 42);
 }
 
 a:hover {
-    color: #346e19;
-    font-weight: bold;
+    color: #196e67;
+    box-shadow: #398fc9 0px 2px 5px;
+    background: linear-gradient(155deg, #e3feff 0%, #90eee9 100%);
+    color: #0a4872;
 }
 
 h1, h2 {
-    color: #0066aa;
+    color: #392c42;
     margin-bottom: 1rem;
 }
 
