@@ -21,7 +21,10 @@ function getUserByID(id) {
 async function registerUser(login, password) {
   const existingUser = getUserByLogin(login);
   if (existingUser) {
-    return { success: false, message: "User already exists" };
+    return { success: false, message: "Konto użytkownika już istnieje" };
+  }
+  if (password.length < 5) {
+    return { success: false, message: "Hasło musi mieć minimum 5 znaków" };
   }
 
   try {
@@ -30,16 +33,16 @@ async function registerUser(login, password) {
       `INSERT INTO users (login, password) VALUES (?, ?)`
     );
     stmt.run(login, hashedPassword);
-    return { success: true, message: "User registered successfully" };
+    return { success: true, message: "Zarejestrowano pomyślnie" };
   } catch (err) {
-    return { success: false, message: "Error registering user" };
+    return { success: false, message: "Błąd rejestracji użytkownika" };
   }
 }
 
 async function authenticateUser(login, password) {
   const user = getUserByLogin(login);
   if (!user) {
-    return { success: false, message: "User not found" };
+    return { success: false, message: "Nie znaleziono użytkownika" };
   }
 
   try {
@@ -47,10 +50,10 @@ async function authenticateUser(login, password) {
     if (isPasswordValid) {
       return { success: true, userId: user.id, login: user.login };
     } else {
-      return { success: false, message: "Invalid password" };
+      return { success: false, message: "Złe hasło" };
     }
   } catch (err) {
-    return { success: false, message: "Error authenticating user" };
+    return { success: false, message: "Błąd autentyfikacji" };
   }
 }
 
@@ -63,10 +66,10 @@ async function initializeAdminUser() {
         `INSERT INTO users (login, password) VALUES (?, ?)`
       );
       stmt.run("admin", hashedPassword);
-      console.log("Admin user created successfully");
+      console.log("Admin stworzony pomyślnie");
     }
   } catch (err) {
-    console.log("Admin user already exists or error creating admin");
+    console.log("Albo admin istnieje, albo wystąpił błąd przy tworzeniu");
   }
 }
 
