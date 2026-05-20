@@ -32,6 +32,8 @@ setInterval(() => {
 
 cleanupExpiredSessions();
 
+
+// DEV ACTIONS - ZMIEŃ TRUE I FALSE ABY DODAĆ PRZYKŁADOWE POSTY DO BAZY LUB USUNĄĆ WSZYSTKIE POSTY Z BAZY
 (async () => {
   var populate = false;
   await populateSamplePosts(populate);

@@ -1,17 +1,17 @@
 import { addPostToDB, db } from "./post_handling.js";
-import * as argon2 from "argon2";
+import { getUserByLogin, registerUser } from "./user_handling.js";
+import { destroyUserSessions } from "./session_handling.js";
 
 async function populateSamplePosts(isTrue, numPosts = 25) {
 if (isTrue) {
-  const checkUser = db.prepare(`SELECT id FROM users WHERE login = 'populated_user'`);
-  let userId = checkUser.get()?.id;
+  let user = getUserByLogin('populated_user');
   
-  if (!userId) {
-    const hashedPassword = await argon2.hash('hasło');
-    const insertUser = db.prepare(`INSERT INTO users (login, password) VALUES (?, ?)`);
-    insertUser.run('populated_user', hashedPassword);
-    userId = checkUser.get()?.id;
+  if (!user) {
+    await registerUser('populated_user', 'hasło');
+    user = getUserByLogin('populated_user');
   }
+  
+  const userId = user.id;
   
   const sampleTitles = ["Mój pierwszy post", "Ciekawe doświadczenie", "Podróże po Polsce", "Ulubione książki", "Gotowanie na co dzień", "Sport i zdrowie", "Technologie jutra", "Muzyka, która inspiruje", "Sztuka i kultura", "Porady życiowe"];
   const sampleTexts = ["Lorem ipsum", "ciekawa treść", "to jest treść fajnego posta", "(insert text)", "więcej tekstu tutaj", "jeszcze trochę treści", "post pełen informacji"];
@@ -27,12 +27,15 @@ isTrue = false;
 
 function nukeTableRecords(bigredbutton) {
     if (bigredbutton) {
-        const stmt = db.prepare(`DELETE FROM posts`);
-        stmt.run();
-        const deleteSessionsStmt = db.prepare(`DELETE FROM sessions WHERE userId = (SELECT id FROM users WHERE login = 'populated_user')`);
-        deleteSessionsStmt.run();
-        const deleteUserStmt = db.prepare(`DELETE FROM users WHERE login = 'populated_user'`);
-        deleteUserStmt.run();
+        const user = getUserByLogin('populated_user');
+        
+        if (user) {
+            destroyUserSessions(user.id);
+            const stmt = db.prepare(`DELETE FROM posts WHERE user_id = ?`);
+            stmt.run(user.id);
+            const deleteUserStmt = db.prepare(`DELETE FROM users WHERE login = 'populated_user'`);
+            deleteUserStmt.run();
+        }
         console.log("KABOOOOM!!! All records in the 'posts' table have been deleted.");
     } else {
         console.log("Table deletion aborted: nuke not set to true.");
