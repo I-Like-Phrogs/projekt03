@@ -48,7 +48,8 @@ BEZPIECZEŃSTWO:
 - Każdy post edytować/usunąć może tylko autor lub administrator
 
 INSTALACJA:
-npm install express ejs morgan cookie-parser argon2
+Komenda w terminalu:
+npm install
 
 URUCHOMIENIE:
 node index.js
