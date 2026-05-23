@@ -29,7 +29,7 @@ await initializeAdminUser();
 
 function loadPostsFromDB(limit = 10, offset = 0) {
   const stmt = db.prepare(
-    `SELECT posts.id, posts.title, users.login AS author, posts.text, posts.user_id FROM posts JOIN users ON posts.user_id = users.id LIMIT ? OFFSET ?`
+    `SELECT posts.id, posts.title, users.login AS author, posts.text, posts.user_id FROM posts JOIN users ON posts.user_id = users.id ORDER BY posts.id DESC LIMIT ? OFFSET ?`
   );
   return stmt.all(limit, offset);
 }

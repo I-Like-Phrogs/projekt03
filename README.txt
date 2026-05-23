@@ -1,5 +1,13 @@
 Portal społecznościowy do publikowania i zarządzania postami. Zbudowany w Node.js z hashowaniem haseł argon2 i sesją HMAC-bezpieczną.
 
+INSTALACJA:
+Komenda w terminalu:
+npm install
+
+URUCHOMIENIE:
+node index.js
+Serwer dostępny na http://localhost:8000
+
 FUNKCJE GŁÓWNE:
 - Rejestracja i logowanie użytkowników
 - Tworzenie, edycja i usuwanie postów (CRUD)
@@ -20,7 +28,7 @@ W pliku index.js są zmienne:
 - populate=true - tworzy 25 losowych testowych postów przy starcie
 Po testach zmienić obie na false.
 
-DOSTĘPNE TRASY:
+DOSTĘPNE ŚCIERZKI:
 GET /                    Strona główna
 GET /forum              Lista postów (10 na stronę)
 GET /login              Formularz logowania
@@ -47,10 +55,4 @@ BEZPIECZEŃSTWO:
 - Automatyczne czyszczenie wygasłych sesji co godzinę
 - Każdy post edytować/usunąć może tylko autor lub administrator
 
-INSTALACJA:
-Komenda w terminalu:
-npm install
 
-URUCHOMIENIE:
-node index.js
-Serwer dostępny na http://localhost:8000

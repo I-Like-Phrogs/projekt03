@@ -42,10 +42,8 @@ a {
 }
 
 a:hover {
-    color: #196e67;
     box-shadow: #398fc9 0px 2px 5px;
     background: linear-gradient(155deg, #e3feff 0%, #90eee9 100%);
-    color: #0a4872;
 }
 
 h1, h2 {

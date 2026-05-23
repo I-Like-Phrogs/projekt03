@@ -31,11 +31,16 @@ function nukeTableRecords(bigredbutton) {
         
         if (user) {
             destroyUserSessions(user.id);
-            const stmt = db.prepare(`DELETE FROM posts WHERE user_id = ?`);
-            stmt.run(user.id);
-            const deleteUserStmt = db.prepare(`DELETE FROM users WHERE login = 'populated_user'`);
-            deleteUserStmt.run();
         }
+        
+        // Delete ALL posts regardless of user
+        const deleteAllPostsStmt = db.prepare(`DELETE FROM posts`);
+        deleteAllPostsStmt.run();
+        
+        // Delete the populated_user if it exists
+        const deleteUserStmt = db.prepare(`DELETE FROM users WHERE login = 'populated_user'`);
+        deleteUserStmt.run();
+        
         console.log("KABOOOOM!!! All records in the 'posts' table have been deleted.");
     } else {
         console.log("Table deletion aborted: nuke not set to true.");
