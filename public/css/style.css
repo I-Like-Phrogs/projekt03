@@ -39,6 +39,7 @@ a {
     margin: 5px;
     background: linear-gradient(45deg, #8ccae9 0%, #94f7bb 100%);
     color: rgb(32, 90, 42);
+    border: 1px white solid;
 }
 
 a:hover {
@@ -49,6 +50,11 @@ a:hover {
 h1, h2 {
     color: #392c42;
     margin-bottom: 1rem;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.post_body_text {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 h1 {
@@ -252,6 +258,7 @@ button:active {
 .edit-btn {
     background: linear-gradient(135deg, #87ceeb 0%, #5ba3d0 100%);
     color: white;
+    border: 1px white solid;
 }
 
 .edit-btn:hover {
@@ -263,6 +270,7 @@ button:active {
 .delete-btn {
     background: linear-gradient(135deg, #c97676 0%, #a85a5a 100%);
     color: white;
+    border: 1px white solid;
 }
 
 .delete-btn:hover {
@@ -275,6 +283,7 @@ button:active {
     background: linear-gradient(135deg, #c97676 0%, #a85a5a 100%);
     color: white;
     padding: 12px 24px;
+    border: 1px white solid;
 }
 
 .danger-btn:hover {
@@ -356,6 +365,7 @@ textarea {
     font-weight: 600;
     box-shadow: 0 3px 10px rgba(0, 136, 204, 0.2);
     white-space: nowrap;
+    border: 1px white solid;
 }
 
 .auth-btn:hover {
