@@ -1,0 +1,21 @@
+Readme:
+    wszystko objaśnione
+    ładnie schludnie napisane
+    dałbym wyżej instalacje i uruchomienie bo najpierw dowiaduje sie jak testować aplikacje a dopiero potem jak ją odpalić
+
+Kod:
+    wszystkie pliki nazwane bardzo ładnie, tak ze wiadomo co który robi
+    kod bardzo czytelny
+    na tyle na ile sie znam to wszystko raczej jest dobrze
+
+Wygląd aplikacji:
+    ładny minimalistyczny
+    brak stylizacji tekstu na homescreen oraz na przycisku powrót
+    uzycie analogowego układu kolorów daje ładne i spójne kolory(troche sie zlewające ze sobą tbh)
+    brakuje mi koloru komplementarnego który by wyróżniał niektóre elementy (mozna dodać czerwony na przycisk powrót albo wyloguj)
+    hovery wszystkie tworzą niepasujący zielony tekst (np na przycisku usuń) oraz zielone przyciki stają sie nie czytelne po najechaniu 
+
+Działanie aplikacji:
+    na homescreen masz "zaloguj/zarejestruj" co jest szczerze troche mylące gdy musisz kliknąć w "tutaj" żeby sie zalogować
+    jak masz "stwórz własny post" to bym lepiej by było jakby przycisk żeby działał na całości a nie tylko na "post"
+    kolejność dodawania postów jest odwrotna niz by tego oczekiwał użytkownik, lepiej byłoby żeby najnowsze posty były u góry 
